@@ -8,7 +8,7 @@ target "otelless-vllm" {
   dockerfile = "Dockerfile"
   platforms = ["linux/amd64"]
   tags = ["otelless-vllm:0.8.5.post1"]
-  output = ["type=docker"]
+  output = ["type=local,dest=./wheelhouse"]
   
   // Resource limits
   args = {

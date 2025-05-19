@@ -45,3 +45,7 @@ RUN auditwheel repair \
     --exclude 'libtorch*.so*' \
     --exclude libc10*.so*  \
     --exclude libcuda.so.1
+
+# Final stage: export only the wheel
+FROM scratch AS export
+COPY --from=builder /wheelhouse/vllm-*.whl /
